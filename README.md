@@ -1,4 +1,4 @@
-# CoolRepo
+# CoolRepo - GIS
 ## Aufgabe 1)
   * Link zum Root Ordner der Aufgabe:
     * https://github.com/weibertalexander/CoolRepo/tree/main/Aufgabe1
