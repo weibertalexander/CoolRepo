@@ -1,0 +1,80 @@
+header {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    padding-bottom: 20px;
+
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -21px;
+    z-index: 1;
+
+}
+
+
+/*
+.headersect{
+    width: 100%;
+    height: 100%;
+    margin-left: -20px;
+    margin-right: -50px;
+    margin-top: -20%;
+    margin-bottom: -200px;
+    background-color: rgb(18, 129, 133);
+    z-index: -99;
+}
+*/
+
+
+#video1 {
+    position: relative;
+    width: 100%;
+    margin-top: -30%;
+    z-index: -5;
+}
+
+#videooverlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: tomato;
+    z-index: 5;
+}
+
+header h1,h2 {
+    position: relative;
+    margin-top: -20%;
+    margin-left: 50%;
+    margin-bottom: 15%;
+    text-align: center;
+    font-family: "Staatliches";
+    font-size: 5vw;
+    letter-spacing: 0.05em;
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(28, 207, 219) 3px 3px 10px;
+    z-index: 11;
+}
+
+header h2 {
+    font-size: 4vw;
+    padding-top: 1em;
+}
+.navigation {
+    position: relative;
+    margin-top: -12%;
+    height: 20%;
+    margin-left: 50%;
+    z-index: 10;
+}
+
+.navigation a {
+    position: inherit;
+    size: 1em;
+    margin-left: 28%;
+    font-size: 3vw;
+    font-family: "Oswald";
+    color: rgb(219, 245, 255);
+}
+
+
