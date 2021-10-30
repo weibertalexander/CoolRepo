@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <section class="header">
+        <div class="header">
             <video id="video1" autoplay muted loop>
                 <source src="Bilder/headervid.mp4" type="video/mp4" />
             </video>
@@ -28,33 +28,50 @@
                 <a href="index.html">Home</a>
                 <a href="events.html">Events</a>
             </nav>
-        </section>
+        </div>
     </header>
     <main>
         <div class="paragraph1">
-            <h2>Wunderschönes Reiseziel mit viel Spannung und interessanter geographischer Lage</h2>
+            <div class="backgroundblur">
+                <img id="blurrysouthpole" src="Bilder/Südpol2.jpg" alt="Aussicht auf den Südpol" />
+            </div>
             <div class="content1">
+                <h2>Wunderschönes Reiseziel mit viel Spannung und interessanter geographischer Lage</h2>
                 <img id="southpolepng" src="Bilder/Südpol2.jpg" alt="Aussicht auf den Südpol" />
-                <p id="t1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                <p id="t1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore
                     et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                    rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                    rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                    ipsum
+                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                    dolore
+                    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                    Stet
                     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
         </div>
         <div class="paragraph2">
+            <div class="backgroundblur">
+                <img id="blurrypenguin" src="Bilder/Pinguine.jpg" alt="Aussicht auf den Südpol" />
+            </div>
             <h2>Biodiverse Umgebung mit viel Fauna und wenig Flora</h2>
             <div class="content2">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                <img id="penguinimg" src="Bilder/Pinguine.jpg" alt="Pinguine" />
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore
                     et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
                     rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <img id="penguinimg" src="Bilder/Pinguine.jpg" alt="Pinguine" />
-                <img id="sealpng" src="Bilder/Robbe.jpg" alt="Robbe" />
+                <div id="images2">
+                    <img id="sealimg" src="Bilder/Robbe.jpg" alt="Robbe" />
+                    <img id="orcaimg" src="Bilder/Orca.jpg" alt="Orca" />
+                </div>
             </div>
         </div>
+        <div class="backgroundblur">
+            <img id="blurryorca" src="Bilder/Orca.jpg" />
+        </div>
         <div class="table">
-            <h3><i>Es gibt viele Tiere</i></h3>
+            <h3>Es gibt viele Tiere und viel Eis</h3>
             <ul>
                 <b>
                     <li>Pinguine</li>
@@ -64,27 +81,19 @@
                     <li>Wale</li>
                 </b>
             </ul>
-        </div>
-        <div id="paragraph2">
-            <div class="text">
-                <h2> <i>Weitere Impressionen</i></h2>
-            </div>
-            <iframesrc="https: //www.youtube-nocookie.com/embed/G-5WrlOuOAw" title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-                <video autoplay muted>
+            <div id="vid">
+                <video id="viewonsouthpole" autoplay muted>
                     <source src="Bilder/Timelapse.mp4" type="video/mp4" />
                 </video>
-                <br />
-                <div class="text">
-                    <h2> <i>Weitere Links</i></h2>
-                </div>
-                <a class="link" href="https://www.polaris-tours.de/antarktis-reisen/" target="_blank">Reiseportal
-                    Polaris Tours</a>
-                <a class="link" href="https://www.aldi-reisen.de/service/reisefuehrer/amerika/antarktis"
-                    target="_blank">Reiseportal Aldi Reisen</a>
-                <a class="link" href=".header">Zurück nach oben</a>
+            </div>
+        </div>
+        <div class="paragraph3">
+            <h2> Weitere Links </h2>
+            <a class="link" href="https://www.polaris-tours.de/antarktis-reisen/" target="_blank">Reiseportal
+                Polaris Tours</a>
+            <a class="link" href="https://www.aldi-reisen.de/service/reisefuehrer/amerika/antarktis"
+                target="_blank">Reiseportal Aldi Reisen</a>
+            <a class="link" href="#video1">Zurück nach oben</a>
         </div>
     </main>
     <hr>
