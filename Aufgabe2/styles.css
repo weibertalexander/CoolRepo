@@ -1,31 +1,12 @@
 header {
-    position: fixed;
+    position: relative;
     width: 100%;
-    height: 100%;
-
-    padding-bottom: 20px;
-
+    height: 23vw;
     margin-left: -8px;
     margin-right: -8px;
     margin-top: -21px;
     z-index: 1;
-
 }
-
-
-/*
-.headersect{
-    width: 100%;
-    height: 100%;
-    margin-left: -20px;
-    margin-right: -50px;
-    margin-top: -20%;
-    margin-bottom: -200px;
-    background-color: rgb(18, 129, 133);
-    z-index: -99;
-}
-*/
-
 
 #video1 {
     position: relative;
@@ -34,35 +15,37 @@ header {
     z-index: -5;
 }
 
-#videooverlay {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: tomato;
-    z-index: 5;
-}
-
-header h1,h2 {
+header h1 {
     position: relative;
     margin-top: -20%;
     margin-left: 50%;
     margin-bottom: 15%;
     text-align: center;
     font-family: "Staatliches";
+    font-style: italic;
     font-size: 5vw;
     letter-spacing: 0.05em;
     color: rgb(219, 245, 255);
-    text-shadow: rgb(28, 207, 219) 3px 3px 10px;
+    text-shadow: rgb(28, 207, 219) 3px 3px 5px;
     z-index: 11;
 }
 
 header h2 {
+    position: relative;
+    margin-top: -16%;
+    margin-left: 50%;
+    text-align: center;
+    font-family: "Staatliches";
     font-size: 4vw;
-    padding-top: 1em;
+    letter-spacing: 0.05em;
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(28, 207, 219) 3px 3px 5px;
+    z-index: 11;
 }
+
 .navigation {
     position: relative;
-    margin-top: -12%;
+    margin-top: -3%;
     height: 20%;
     margin-left: 50%;
     z-index: 10;
@@ -71,10 +54,41 @@ header h2 {
 .navigation a {
     position: inherit;
     size: 1em;
-    margin-left: 28%;
+    margin-left: 25%;
     font-size: 3vw;
     font-family: "Oswald";
     color: rgb(219, 245, 255);
+    text-shadow: rgb(28, 207, 219) 3px 3px 5px;
+}
+
+.paragraph1 {
+    margin-left: -8px;
+    background-image: url(/Bilder/Südpol2.jpg);
+    background-size: 130% 100%;
+    width: 100%;
+}
+
+.paragraph1 h2 {
+    font-family: "Staatliches";
+    font-size: 2.7vw;
+    text-align: left;
 }
 
 
+#t1 {
+    padding-top: 5px;
+    font-family: "Zen Kurenaido";
+    font-size: 2vw;
+    width: 50%;
+    padding-left: 10px;
+    margin-right: 30%;
+    margin-top: -30%;
+}
+
+#southpolepng {
+    position: relative;
+    width: 40%;
+    height: auto;
+    margin-left: 55%;
+    margin-top: 3%;
+}
