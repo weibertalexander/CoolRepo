@@ -277,6 +277,7 @@ footer {
     }
     #video1 {
         margin-top: -15%;
+        margin-right: -5px;
     }
     .navigation {
         margin-left: 27.5%;
@@ -285,8 +286,8 @@ footer {
         font-size: 5vw;
     }
     .paragraph1 h2 {
+        padding: 5%;
         font-size: 5vw;
-        margin: -5%;
         margin-top: -10%;
     }
     #t1 {
@@ -295,6 +296,10 @@ footer {
         margin-right: 220px;
         padding-top: 25%;
         font-size: 4vw;
+    }
+    .backgroundblur{
+        margin-left: 0%;
+        overflow-x: hidden;
     }
     #blurrysouthpole {
         width: 300%;
@@ -311,6 +316,7 @@ footer {
         margin-top: -20%;
     }
     .paragraph2 h2 {
+        margin-top: -245%;
         font-size: 5vw;
     }
 
@@ -321,11 +327,12 @@ footer {
     }
 
     #blurrypenguin {
+        margin-top: 10%;
         width: 300%;
     }
 
     .paragraph2 {
-        margin-top: -160%;
+        margin-top: 0%;
     }
     .paragraph2 p {
         width: 100%;
@@ -346,8 +353,8 @@ footer {
     }
 
     #blurryorca {
-        width: 450%;
-        margin-top: -150%;
+        width: 300%;
+        margin-top: -50%;
     }
 
     .table {
@@ -361,7 +368,7 @@ footer {
     .table ul {
         margin-top: 5%;
         font-size: 4vw;
-        margin-left: 35%;
+        margin-left: 30%;
     }
 
     #vid {
