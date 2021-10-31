@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <title>Reiseziel: Südpol Eventseite</title>
     <meta charset="UTF-8" />
@@ -7,47 +8,60 @@
     <meta name="description" content="Reiseziel Südpol" />
     <meta name="keywords" content="Südpol, Events, Hot" />
     <meta name="author" content="Alexander Weibert" />
-    <meta http-equiv="refresh" content="5" >
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Zen+Kurenaido&family=Staatliches&display=swap"
+        rel="stylesheet">
 </head>
-<body background="Bilder/Südpol.jpg">
+
+<body>
     <div>
-    <header>
-        <h1><i>Reiseziel: Südpol</i></h1>
-        <nav>
-            <a href="index.html">Home</a>
-            &nbsp&nbsp&nbsp&nbsp&nbsp
-            <a href="events.html">Events</a>
-        </nav>
-    </div>
-    </header>
-    <div>
-        <h2>Folgende Events sind geplant:</h2>
-    </div>
-    <table>
-        <tr>
-          <th>Wann?</th>
-          <th>Was?</th>
-          <th>Besondere Gäste</th>
-        </tr>
-        <tr>
-            <td>31.10.21</td>
-            <td>Halloweenparty: Pinguin Edition</td>
-            <td>Undead Penguins</td>
-        </tr>
-        <tr>
-            <td>24.12.21</td>
-            <td>Weihnachtsparty mit special Guest: der Weihnachtsmann</td>
-            <td >Extra vom Nordpol: Der Weihnachtsmann</td>
-         </tr>
-         <tr>
-             <td>31.12.21</td>
-             <td>Silvester</td>
-             <td>Die robbenden Robben</td>
-         </tr>
-    </table>
-    <br/>
-    <div>
-        <img src="Bilder/Pinguine2.gif" alt="Süße Pinguine" width=60% height=auto>
-    </div>
+        <header>
+            <video id="video1" autoplay muted loop>
+                <source src="Bilder/headervid.mp4" type="video/mp4" />
+            </video>
+            <h1 id="start">Reiseziel: Südpol</h1>
+            <h2 id="unterschrift">- Events -</h2>
+            <nav class="navigation">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+            </nav>
+        </header>
+        <div class="backgroundblur">
+            <img id="southpole2blur" src="/Bilder/Südpol.jpg">
+        </div>
+        <div id="contentevent">
+            <h2 id="planned">Folgende Events sind geplant:</h2>
+            <table id="table2">
+                <tr>
+                    <th>Wann?</th>
+                    <th>Was?</th>
+                    <th>Besondere Gäste</th>
+                </tr>
+                <tr>
+                    <td>31.10.21</td>
+                    <td>Halloweenparty: Pinguin Edition</td>
+                    <td>Undead Penguins</td>
+                </tr>
+                <tr>
+                    <td>24.12.21</td>
+                    <td>Weihnachtsparty</td>
+                    <td>Extra vom Nordpol: Der Weihnachtsmann</td>
+                </tr>
+                <tr>
+                    <td>31.12.21</td>
+                    <td>Silvester</td>
+                    <td>Die robbenden Robben</td>
+                </tr>
+            </table>
+        </div>
+        <div id="gif">
+            <img id="pgif" src="Bilder/Pinguine2.gif" alt="Süße Pinguine">
+        </div>
+        <hr>
+    <footer>Kontakt: alexander.weibert@hs-furtwangen.de</footer>
 </body>
+
 </html>

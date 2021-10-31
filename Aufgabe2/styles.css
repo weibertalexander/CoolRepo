@@ -17,14 +17,21 @@ header {
     box-sizing: border-box;
 }
 
+p::first-line {
+    font-style: oblique;
+}
+
 img {
     filter: drop-shadow(10px 10px 10px rgb(7, 22, 31));
 }
 
 a:hover {
-    background-color: rgba(8, 54, 182, 0.425);
+    background-color: rgba(255, 255, 255, 0.425);
+    transition: background-color 1s;
 }
-
+[href] {
+    text-decoration: none;
+}
 h2 {
     font-family: "Staatliches";
     color: rgb(219, 245, 255);
@@ -252,6 +259,54 @@ header h2 {
     padding-left: 5%
 }
 
+#contentevent {
+    margin-top: 15%;
+}
+
+#southpole2blur {
+    position: fixed;
+}
+
+#table2 {
+    background-color: rgba(21, 33, 54, 0.322);
+    width: 100%;
+    margin-left: -8px;
+    margin-top: 2%;
+    text-align: center;
+}
+
+#gif {
+    width: 100%;
+    margin-left: 20%;
+}
+
+#pgif {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 60%;
+}
+
+#table2 th {
+    font-family: "Staatliches";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    font-size: 3vw;
+    letter-spacing: 0.05em;
+}
+
+#table2 td {
+    font-family: "Zen Kurenaido";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    font-size: 2vw;
+    letter-spacing: 0.05em;
+    padding: 40px;
+}
+
+#table2 tr {
+    padding: 200px;
+}
+
 footer {
     font-family: "Zen Kurenaido";
     font-size: 3vw;
@@ -259,7 +314,7 @@ footer {
     text-shadow: rgb(0, 0, 0) 3px 3px 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1050px) {
     header {
         margin-bottom: 15%;
     }
@@ -297,7 +352,7 @@ footer {
         padding-top: 25%;
         font-size: 4vw;
     }
-    .backgroundblur{
+    .backgroundblur {
         margin-left: 0%;
         overflow-x: hidden;
     }
@@ -319,18 +374,15 @@ footer {
         margin-top: -245%;
         font-size: 5vw;
     }
-
     #penguinimg {
         width: 80%;
         margin-left: 8%;
         margin-top: -5%;
     }
-
     #blurrypenguin {
         margin-top: 10%;
         width: 300%;
     }
-
     .paragraph2 {
         margin-top: 0%;
     }
@@ -345,56 +397,91 @@ footer {
         width: 80%;
         margin-left: 8%;
     }
-
     #orcaimg {
         width: 84%;
         margin-top: -5%;
         margin-left: 4%;
     }
-
     #blurryorca {
         width: 300%;
         margin-top: -50%;
     }
-
     .table {
         margin-top: -140%;
     }
-
     .table h2 {
         font-size: 5vw;
     }
-
     .table ul {
         margin-top: 5%;
         font-size: 4vw;
         margin-left: 30%;
     }
-
     #vid {
         width: 100%;
         margin-top: 10%;
         margin-left: -7px;
     }
-
     #viewonsouthpole {
         width: 80%;
     }
-
     .paragraph3 {
         margin-top: 5%;
     }
-
     .paragraph3 h2 {
         font-size: 5vw;
     }
-
     .paragraph3 a {
         font-size: 4vw;
         margin-left: -1%;
     }
-
     #oben {
         margin-left: 28%;
+    }
+    #southpole2blur {
+        position: relative;
+        width: 400%;
+        overflow-x: hidden;
+    }
+    #contentevent {
+        width: 100%;
+        margin-top: -164%;
+    }
+
+    #planned {
+        font-size: 7vw;
+        overflow-x: hidden;
+    }
+    #table2 {
+        margin-left: -8px;
+        margin-top: 2%;
+        text-align: center;
+        overflow-x: hidden;
+    }
+    #gif {
+        width: 100%;
+        margin-top: 10%;
+        margin-bottom: 10%;;
+        margin-left: 20%;
+        overflow-x: hidden;
+    }
+    #pgif {
+        width: 60%;
+        overflow-x: hidden;
+    }
+    #table2 th {
+        font-size: 5vw;
+        letter-spacing: 0.05em;
+        overflow-x: hidden;
+    }
+    #table2 td {
+        font-size: 4vw;
+        letter-spacing: 0.05em;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    #table2 tr {
+        padding: 20px;
+        overflow-x: hidden;
     }
 }
