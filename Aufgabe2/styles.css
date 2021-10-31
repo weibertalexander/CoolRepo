@@ -1,5 +1,6 @@
 head, body, footer {
     width: 100%;
+    overflow-x: hidden;
 }
 
 header {
@@ -17,7 +18,11 @@ header {
 }
 
 img {
-    filter:drop-shadow(10px 10px 10px rgb(7, 22, 31));
+    filter: drop-shadow(10px 10px 10px rgb(7, 22, 31));
+}
+
+a:hover {
+    background-color: rgba(8, 54, 182, 0.425);
 }
 
 h2 {
@@ -249,6 +254,7 @@ header h2 {
 
 footer {
     font-family: "Zen Kurenaido";
+    font-size: 3vw;
     color: rgb(0, 0, 0);
     text-shadow: rgb(0, 0, 0) 3px 3px 5px;
 }
@@ -290,8 +296,98 @@ footer {
         padding-top: 25%;
         font-size: 4vw;
     }
+    #blurrysouthpole {
+        width: 300%;
+    }
+    .content1 {
+        margin-top: -190%;
+    }
     #southpolepng {
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    .content1 p {
+        margin-top: -20%;
+    }
+    .paragraph2 h2 {
+        font-size: 5vw;
+    }
+
+    #penguinimg {
+        width: 80%;
+        margin-left: 8%;
+        margin-top: -5%;
+    }
+
+    #blurrypenguin {
+        width: 300%;
+    }
+
+    .paragraph2 {
+        margin-top: -160%;
+    }
+    .paragraph2 p {
+        width: 100%;
+        text-align: center;
+        font-size: 4vw;
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    #sealimg {
+        width: 80%;
+        margin-left: 8%;
+    }
+
+    #orcaimg {
+        width: 84%;
+        margin-top: -5%;
+        margin-left: 4%;
+    }
+
+    #blurryorca {
+        width: 450%;
+        margin-top: -150%;
+    }
+
+    .table {
+        margin-top: -140%;
+    }
+
+    .table h2 {
+        font-size: 5vw;
+    }
+
+    .table ul {
+        margin-top: 5%;
+        font-size: 4vw;
+        margin-left: 35%;
+    }
+
+    #vid {
         width: 100%;
         margin-top: 10%;
+        margin-left: -7px;
+    }
+
+    #viewonsouthpole {
+        width: 80%;
+    }
+
+    .paragraph3 {
+        margin-top: 5%;
+    }
+
+    .paragraph3 h2 {
+        font-size: 5vw;
+    }
+
+    .paragraph3 a {
+        font-size: 4vw;
+        margin-left: -1%;
+    }
+
+    #oben {
+        margin-left: 28%;
     }
 }
