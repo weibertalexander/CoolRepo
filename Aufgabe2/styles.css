@@ -48,6 +48,10 @@ h2 {
     z-index: -5;
 }
 
+header h1, header h2 {
+    animation: 
+}
+
 header h1 {
     position: relative;
     margin-top: -20%;
@@ -260,11 +264,12 @@ header h2 {
 }
 
 #contentevent {
-    margin-top: 15%;
+    margin-top: -55%;
 }
 
 #southpole2blur {
-    position: fixed;
+    position: relative;
+    width: 150%;
 }
 
 #table2 {
@@ -439,13 +444,12 @@ footer {
         margin-left: 28%;
     }
     #southpole2blur {
-        position: relative;
-        width: 400%;
-        overflow-x: hidden;
+        width: 300%;
+        height: auto;
     }
     #contentevent {
         width: 100%;
-        margin-top: -164%;
+        margin-top: -120%;
     }
 
     #planned {
@@ -456,7 +460,6 @@ footer {
         margin-left: -8px;
         margin-top: 2%;
         text-align: center;
-        overflow-x: hidden;
     }
     #gif {
         width: 100%;
