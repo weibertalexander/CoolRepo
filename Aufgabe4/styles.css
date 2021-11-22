@@ -1,0 +1,491 @@
+head, body, footer {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 23vw;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -21px;
+    z-index: 1;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+p::first-line {
+    font-style: oblique;
+}
+
+img {
+    filter: drop-shadow(10px 10px 10px rgb(7, 22, 31));
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.425);
+    transition: background-color 1s;
+}
+[href] {
+    text-decoration: none;
+}
+h2 {
+    font-family: "Staatliches";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    text-align: center;
+    font-size: 4vw;
+    letter-spacing: 0.05em;
+}
+
+#video1 {
+    position: relative;
+    width: 100%;
+    margin-top: -30%;
+    z-index: -5;
+}
+
+header h1, header h2 {
+    animation: 
+}
+
+header h1 {
+    position: relative;
+    margin-top: -20%;
+    margin-left: 50%;
+    margin-bottom: 15%;
+    text-align: center;
+    font-family: "Staatliches";
+    font-style: italic;
+    font-size: 5vw;
+    letter-spacing: 0.05em;
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    z-index: 11;
+}
+
+header h2 {
+    position: relative;
+    margin-top: -16%;
+    margin-left: 50%;
+    z-index: 11;
+}
+
+.navigation {
+    position: relative;
+    margin-top: -3%;
+    height: 20%;
+    margin-left: 50%;
+    z-index: 10;
+}
+
+.navigation a {
+    margin-left: 25%;
+    font-size: 3vw;
+    font-family: "Oswald";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(8, 74, 78) 3px 3px 3px;
+}
+
+.paragraph1 {
+    padding-top: 10%;
+    margin-left: -8px;
+    width: 100%;
+    z-index: 5;
+}
+
+.backgroundblur {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    filter: blur(40px);
+    margin-top: -6%;
+    margin-left: -40px;
+}
+
+#blurrysouthpole {
+    margin-top: -2%;
+    width: 100%;
+}
+
+.content1 {
+    margin-top: -64%;
+}
+
+.paragraph1 h2 {
+    text-align: center;
+    padding: 5%;
+    margin-top: -10%;
+    letter-spacing: 0.05em;
+    z-index: 5;
+}
+
+.paragraph1 p {
+    font-family: "Zen Kurenaido";
+    font-size: 2vw;
+    width: 50%;
+    padding-left: 10px;
+    margin-right: 30%;
+    margin-top: -30%;
+    padding-bottom: 5%;
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+}
+
+#southpolepng {
+    width: 45%;
+    height: auto;
+    margin-top: 0%;
+    margin-left: 53%;
+    vertical-align: top;
+    z-index: 5;
+}
+
+#blurrypenguin {
+    padding-top: 10%;
+    margin-top: -2%;
+    width: 100%;
+}
+
+.paragraph2 {
+    width: 100%;
+}
+
+.paragraph2 h2 {
+    margin-top: -80%;
+    text-align: center;
+    padding: 5%;
+    letter-spacing: 0.05em;
+    z-index: 5;
+}
+
+.content2 {
+    width: 100%;
+    height: auto;
+}
+
+#images2 {
+    padding-top: 0%;
+    width: 100%;
+    height: auto;
+}
+
+#penguinimg {
+    width: 50%;
+    margin-left: 3%;
+    margin-top: 0;
+}
+
+.paragraph2 p {
+    font-family: "Zen Kurenaido";
+    font-size: 2vw;
+    text-align: right;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-left: 55%;
+    padding-right: 12%;
+    margin-top: -30%;
+    padding-bottom: 5%;
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+}
+
+#sealimg {
+    width: 45%;
+    padding-top: 7%;
+    margin-left: 3%;
+}
+
+#orcaimg {
+    width: 45%;
+    height: auto;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+#blurryorca {
+    margin-top: 5%;
+    width: 100%;
+}
+
+.table {
+    margin-top: -60%;
+    text-align: center;
+}
+
+.table h3 {
+    margin-top: 0%;
+    font-family: "Staatliches";
+    font-size: 4vw;
+    text-align: center;
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    letter-spacing: 0.05em;
+    z-index: 5;
+}
+
+.table ul {
+    margin-top: 15%;
+    margin-left: 5%;
+    text-align: left;
+    font-family: "Zen Kurenaido";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    font-size: 2vw;
+    list-style-type: square;
+}
+
+#vid {
+    margin-top: -23%;
+    width: 100%;
+    margin-left: 15%;
+}
+
+#viewonsouthpole {
+    width: 50%;
+}
+
+.paragraph3 {
+    margin-top: 5%;
+    width: 100%;
+}
+
+.paragraph3 a {
+    font-family: "Zen Kurenaido";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    font-size: 3vw;
+    padding-left: 5%
+}
+
+#contentevent {
+    margin-top: -55%;
+}
+
+#southpole2blur {
+    position: relative;
+    width: 150%;
+}
+
+#table2 {
+    background-color: rgba(21, 33, 54, 0.322);
+    width: 100%;
+    margin-left: -8px;
+    margin-top: 2%;
+    text-align: center;
+}
+
+#gif {
+    width: 100%;
+    margin-left: 20%;
+}
+
+#pgif {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 60%;
+}
+
+#table2 th {
+    font-family: "Staatliches";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    font-size: 3vw;
+    letter-spacing: 0.05em;
+}
+
+#table2 td {
+    font-family: "Zen Kurenaido";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    font-size: 2vw;
+    letter-spacing: 0.05em;
+    padding: 40px;
+}
+
+#table2 tr {
+    padding: 200px;
+}
+
+footer {
+    font-family: "Zen Kurenaido";
+    font-size: 3vw;
+    color: rgb(0, 0, 0);
+    text-shadow: rgb(0, 0, 0) 3px 3px 5px;
+}
+
+@media (max-width: 1050px) {
+    header {
+        margin-bottom: 15%;
+    }
+    header h1 {
+        margin-top: -35%;
+        text-align: left;
+        margin-left: 35%;
+        font-size: 8vw;
+        margin-bottom: 15%;
+    }
+    header h2 {
+        text-align: left;
+        margin-left: 48%;
+        font-size: 6vw;
+    }
+    #video1 {
+        margin-top: -15%;
+        margin-right: -5px;
+    }
+    .navigation {
+        margin-left: 27.5%;
+    }
+    .navigation a {
+        font-size: 5vw;
+    }
+    .paragraph1 h2 {
+        padding: 5%;
+        font-size: 5vw;
+        margin-top: -10%;
+    }
+    #t1 {
+        text-align: center;
+        width: 95%;
+        margin-right: 220px;
+        padding-top: 25%;
+        font-size: 4vw;
+    }
+    .backgroundblur {
+        margin-left: 0%;
+        overflow-x: hidden;
+    }
+    #blurrysouthpole {
+        width: 300%;
+    }
+    .content1 {
+        margin-top: -190%;
+    }
+    #southpolepng {
+        width: 80%;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    .content1 p {
+        margin-top: -20%;
+    }
+    .paragraph2 h2 {
+        margin-top: -245%;
+        font-size: 5vw;
+    }
+    #penguinimg {
+        width: 80%;
+        margin-left: 8%;
+        margin-top: -5%;
+    }
+    #blurrypenguin {
+        margin-top: 10%;
+        width: 300%;
+    }
+    .paragraph2 {
+        margin-top: 0%;
+    }
+    .paragraph2 p {
+        width: 100%;
+        text-align: center;
+        font-size: 4vw;
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    #sealimg {
+        width: 80%;
+        margin-left: 8%;
+    }
+    #orcaimg {
+        width: 84%;
+        margin-top: -5%;
+        margin-left: 4%;
+    }
+    #blurryorca {
+        width: 300%;
+        margin-top: -50%;
+    }
+    .table {
+        margin-top: -140%;
+    }
+    .table h2 {
+        font-size: 5vw;
+    }
+    .table ul {
+        margin-top: 5%;
+        font-size: 4vw;
+        margin-left: 30%;
+    }
+    #vid {
+        width: 100%;
+        margin-top: 10%;
+        margin-left: -7px;
+    }
+    #viewonsouthpole {
+        width: 80%;
+    }
+    .paragraph3 {
+        margin-top: 5%;
+    }
+    .paragraph3 h2 {
+        font-size: 5vw;
+    }
+    .paragraph3 a {
+        font-size: 4vw;
+        margin-left: -1%;
+    }
+    #oben {
+        margin-left: 28%;
+    }
+    #southpole2blur {
+        width: 300%;
+        height: auto;
+    }
+    #contentevent {
+        width: 100%;
+        margin-top: -120%;
+    }
+
+    #planned {
+        font-size: 7vw;
+        overflow-x: hidden;
+    }
+    #table2 {
+        margin-left: -8px;
+        margin-top: 2%;
+        text-align: center;
+    }
+    #gif {
+        width: 100%;
+        margin-top: 10%;
+        margin-bottom: 10%;;
+        margin-left: 20%;
+        overflow-x: hidden;
+    }
+    #pgif {
+        width: 60%;
+        overflow-x: hidden;
+    }
+    #table2 th {
+        font-size: 5vw;
+        letter-spacing: 0.05em;
+        overflow-x: hidden;
+    }
+    #table2 td {
+        font-size: 4vw;
+        letter-spacing: 0.05em;
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    #table2 tr {
+        padding: 20px;
+        overflow-x: hidden;
+    }
+}
