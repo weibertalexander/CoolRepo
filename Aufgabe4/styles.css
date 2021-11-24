@@ -49,9 +49,6 @@ h2 {
     z-index: -5;
 }
 
-header h1, header h2 {
-    animation: 
-}
 
 header h1 {
     position: relative;
@@ -264,8 +261,92 @@ header h2 {
     padding-left: 5%
 }
 
+#eventformh {
+
+    margin-top: 7%;
+    margin-left: -60%;
+    text-align: center;
+}
+
+#eventform {
+    position: absolute;
+    width: 100%;
+    margin-top: -60%;
+    margin-left: 30%;
+}
+
+.inputfield {
+    padding: 25px;
+}
+
+.inputfield label {
+    font-size: 2vw;
+    font-family: "Oswald";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+}
+
+input {
+    position: absolute;
+    border-style:solid;
+    font-family: "Oswald";
+    font-size: 1vw;
+    border-color:rgb(14, 107, 114);
+    border-radius: 10px;
+    padding: 12px;
+    width: 40%;
+    color: black;
+    background-color:rgb(170, 211, 245);
+}
+
+#eventformbody {
+    margin-top: -50px;
+    margin-left: -10%;
+}
+
+#cprice {
+    width: 20%;
+}
+
+#cdate {
+    width: 20%;
+    padding: 11px;
+}
+
+#pricefield, #datefield {
+    position:absolute;
+    width: 100%;
+    float: left;
+}
+
+#datefield {
+
+    margin-left: 20%;
+}
+
+#formbutton {
+    border-style: solid;
+    border-color:black;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    font-size: 2vw;
+    font-family: "Staatliches";
+    letter-spacing: 0.1vw;
+    margin-left: 45%;
+    margin-top: 1%;
+    background-color: rgb(92, 158, 228);
+    transition-duration: .2s;
+}
+
+#formbutton:hover {
+    background-color: rgb(34, 44, 136);
+    color: rgb(170, 211, 245);
+    border-color: rgb(170, 211, 245);
+}
+
 #contentevent {
-    margin-top: -55%;
+    margin-top: -31%;
 }
 
 #southpole2blur {
@@ -274,11 +355,27 @@ header h2 {
 }
 
 #table2 {
-    background-color: rgba(21, 33, 54, 0.322);
     width: 100%;
     margin-left: -8px;
-    margin-top: 2%;
+    margin-top: 50px;
     text-align: center;
+    background-color: rgba(21, 33, 54, 0.322);
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+#table2 th {
+    border-style: solid;
+    border-color:rgb(0, 0, 0);
+    border-radius: 10px;
+    background-color: rgba(21, 33, 54, 0.322);
+    font-family: "Staatliches";
+    color: rgb(219, 245, 255);
+    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
+    font-size: 3vw;
+    letter-spacing: 0.05em;
+    border-width: 2px;
 }
 
 #gif {
@@ -289,15 +386,31 @@ header h2 {
 #pgif {
     padding-top: 5%;
     padding-bottom: 5%;
-    width: 60%;
+    width: 55%;
 }
 
-#table2 th {
-    font-family: "Staatliches";
-    color: rgb(219, 245, 255);
-    text-shadow: rgb(14, 107, 114) 3px 3px 5px;
-    font-size: 3vw;
-    letter-spacing: 0.05em;
+#table2 th#date {
+    width: 20%;
+}
+#table2 th#price {
+    width: 20%;
+}
+
+#table2 th#remove {
+    width: 5%;
+}
+
+#table2 td.trash {
+    width: 5%;
+    background-image: url("/Bilder/bin.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-duration: .4s;
+}
+
+#table2 td#trash:hover {
+    filter:invert(100%);
 }
 
 #table2 td {
@@ -306,12 +419,12 @@ header h2 {
     text-shadow: rgb(14, 107, 114) 3px 3px 5px;
     font-size: 2vw;
     letter-spacing: 0.05em;
-    padding: 40px;
+    padding-bottom: 10px;
 }
 
-#table2 tr {
-    padding: 200px;
-}
+#table2 tr:nth-child(odd) {
+    background: #00000033;
+  }
 
 footer {
     font-family: "Zen Kurenaido";

@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Zen+Kurenaido&family=Staatliches&display=swap"
         rel="stylesheet">
+    <script src="script.js" defer> </script>
 </head>
 
 <body>
@@ -32,28 +33,32 @@
         <div class="backgroundblur">
             <img id="southpole2blur" src="/Bilder/Südpol.jpg">
         </div>
+        <form id="eventform">
+            <h2 id="eventformh">Idee für ein Event? Füge hier ein Event hinzu!</h2>
+            <div id="eventformbody">
+                <div class="inputfield" id="interpretfield">
+                    <label for="cinterpret">Interpret</label></br>
+                    <input type="text" id="cinterpret" placeholder="Undead Penguins">
+                </div>
+                <div class="inputfield" id="pricefield">
+                    <label for="cprice">Preis</label></br>
+                    <input type="number" id="cprice" placeholder="19,99" pattern="[0-9]+(\\.[0-9]{2}?)?">
+                </div>
+                <div class="inputfield" id="datefield">
+                    <label for="cdate">Datum</label></br>
+                    <input type="date" id="cdate">
+                </div>
+                <button id="formbutton" onclick="return false">Hinzufügen</button>
+            </div>
+        </form>
         <div id="contentevent">
             <h2 id="planned">Folgende Events sind geplant:</h2>
             <table id="table2">
                 <tr>
-                    <th>Wann?</th>
-                    <th>Was?</th>
-                    <th>Besondere Gäste</th>
-                </tr>
-                <tr>
-                    <td>31.10.21</td>
-                    <td>Halloweenparty: Pinguin Edition</td>
-                    <td>Undead Penguins</td>
-                </tr>
-                <tr>
-                    <td>24.12.21</td>
-                    <td>Weihnachtsparty</td>
-                    <td>Extra vom Nordpol: Der Weihnachtsmann</td>
-                </tr>
-                <tr>
-                    <td>31.12.21</td>
-                    <td>Silvester</td>
-                    <td>Die robbenden Robben</td>
+                    <th id="date">Wann?</th>
+                    <th id="interpret">Was?</th>
+                    <th id="price">Preis</th>
+                    <th id="remove"></th>
                 </tr>
             </table>
         </div>
@@ -61,7 +66,7 @@
             <img id="pgif" src="Bilder/Pinguine2.gif" alt="Süße Pinguine">
         </div>
         <hr>
-    <footer>Kontakt: alexander.weibert@hs-furtwangen.de</footer>
+        <footer>Kontakt: alexander.weibert@hs-furtwangen.de</footer>
 </body>
 
 </html>
