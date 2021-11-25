@@ -409,7 +409,7 @@ input {
 
 #table2 td.trash {
     width: 5%;
-    background-image: url("/Bilder/bin.png");
+    background-image: url("Bilder/bin.png");
     background-size: 30%;
     background-repeat: no-repeat;
     background-position: center;
