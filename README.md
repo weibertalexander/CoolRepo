@@ -16,3 +16,9 @@
     * https://github.com/weibertalexander/CoolRepo/tree/main/Aufgabe3
   * Link zur Github Page:
     * https://weibertalexander.github.io/CoolRepo/Aufgabe3/index.html
+
+## Aufgabe 4)
+  * Link zum Root Ordner der Aufgabe:
+    * https://github.com/weibertalexander/CoolRepo/tree/main/Aufgabe4
+  * Link zur Github Page:
+    * https://weibertalexander.github.io/CoolRepo/Aufgabe4/index.html
