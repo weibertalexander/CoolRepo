@@ -22,3 +22,9 @@
     * https://github.com/weibertalexander/CoolRepo/tree/main/Aufgabe4
   * Link zur Github Page:
     * https://weibertalexander.github.io/CoolRepo/Aufgabe4/index.html
+
+## Aufgabe 5)
+  * Link zum Root Ordner der Aufgabe:
+    * https://github.com/weibertalexander/CoolRepo/tree/main/Aufgabe5
+  * Link zur Github Page:
+    * https://weibertalexander.github.io/CoolRepo/Aufgabe5/index.html
