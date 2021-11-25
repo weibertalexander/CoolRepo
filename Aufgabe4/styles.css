@@ -416,7 +416,7 @@ input {
     transition-duration: .4s;
 }
 
-#table2 td#trash:hover {
+#table2 td.trash:hover {
     filter: invert(100%);
 }
 

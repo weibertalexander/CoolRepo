@@ -78,7 +78,7 @@ function removeTableEntry(event: Event): void {
 
 // Remove event from events array
 function removeEvent(itemid: string): void {
-    events.forEach( (eventelem, index) => {
+    events.forEach((eventelem, index) => {
         if (eventelem.getID() == itemid) events.splice(index, 1);
     });
     console.log(events);
