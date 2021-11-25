@@ -58,7 +58,7 @@ function addEvent(): void {
         return;
     }
     // Create the event
-    let entry: EventPlanner = new EventPlanner(interpretinput.value, dateinput.value, priceinput.value)
+    let entry: EventPlanner = new EventPlanner(interpretinput.value, dateinput.value, priceinput.value);
     events.push(entry);
     addTableEntry(entry);
 

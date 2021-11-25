@@ -30,9 +30,11 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.425);
     transition: background-color 1s;
 }
+
 [href] {
     text-decoration: none;
 }
+
 h2 {
     font-family: "Staatliches";
     color: rgb(219, 245, 255);
@@ -260,6 +262,9 @@ header h2 {
     font-size: 3vw;
     padding-left: 5%
 }
+#eventbody {
+    background-color:rgb(164, 201, 204)
+}
 
 #eventformh {
 
@@ -271,7 +276,7 @@ header h2 {
 #eventform {
     position: absolute;
     width: 100%;
-    margin-top: -60%;
+    margin-top: 5%;
     margin-left: 30%;
 }
 
@@ -288,15 +293,15 @@ header h2 {
 
 input {
     position: absolute;
-    border-style:solid;
+    border-style: solid;
     font-family: "Oswald";
     font-size: 1vw;
-    border-color:rgb(14, 107, 114);
+    border-color: rgb(14, 107, 114);
     border-radius: 10px;
     padding: 12px;
     width: 40%;
     color: black;
-    background-color:rgb(170, 211, 245);
+    background-color: rgb(170, 211, 245);
 }
 
 #eventformbody {
@@ -314,7 +319,7 @@ input {
 }
 
 #pricefield, #datefield {
-    position:absolute;
+    position: absolute;
     width: 100%;
     float: left;
 }
@@ -326,7 +331,7 @@ input {
 
 #formbutton {
     border-style: solid;
-    border-color:black;
+    border-color: black;
     padding: 10px;
     border-radius: 10px;
     position: absolute;
@@ -346,11 +351,12 @@ input {
 }
 
 #contentevent {
-    margin-top: -31%;
+    position: relative;
+    margin-top: 35%;
 }
 
 #southpole2blur {
-    position: relative;
+    position: fixed;
     width: 150%;
 }
 
@@ -361,13 +367,13 @@ input {
     text-align: center;
     background-color: rgba(21, 33, 54, 0.322);
     border-style: solid;
-    border-color:rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
     border-radius: 10px;
 }
 
 #table2 th {
     border-style: solid;
-    border-color:rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
     border-radius: 10px;
     background-color: rgba(21, 33, 54, 0.322);
     font-family: "Staatliches";
@@ -392,6 +398,7 @@ input {
 #table2 th#date {
     width: 20%;
 }
+
 #table2 th#price {
     width: 20%;
 }
@@ -410,7 +417,7 @@ input {
 }
 
 #table2 td#trash:hover {
-    filter:invert(100%);
+    filter: invert(100%);
 }
 
 #table2 td {
@@ -424,7 +431,7 @@ input {
 
 #table2 tr:nth-child(odd) {
     background: #00000033;
-  }
+}
 
 footer {
     font-family: "Zen Kurenaido";
@@ -437,6 +444,7 @@ footer {
     header {
         margin-bottom: 15%;
     }
+
     header h1 {
         margin-top: -35%;
         text-align: left;
@@ -444,26 +452,32 @@ footer {
         font-size: 8vw;
         margin-bottom: 15%;
     }
+
     header h2 {
         text-align: left;
         margin-left: 48%;
         font-size: 6vw;
     }
+
     #video1 {
         margin-top: -15%;
         margin-right: -5px;
     }
+
     .navigation {
         margin-left: 27.5%;
     }
+
     .navigation a {
         font-size: 5vw;
     }
+
     .paragraph1 h2 {
         padding: 5%;
         font-size: 5vw;
         margin-top: -10%;
     }
+
     #t1 {
         text-align: center;
         width: 95%;
@@ -471,40 +485,50 @@ footer {
         padding-top: 25%;
         font-size: 4vw;
     }
+
     .backgroundblur {
         margin-left: 0%;
         overflow-x: hidden;
     }
+
     #blurrysouthpole {
         width: 300%;
     }
+
     .content1 {
         margin-top: -190%;
     }
+
     #southpolepng {
         width: 80%;
         margin-top: 5%;
         margin-left: 10%;
     }
+
     .content1 p {
         margin-top: -20%;
     }
+
     .paragraph2 h2 {
         margin-top: -245%;
         font-size: 5vw;
     }
+
     #penguinimg {
         width: 80%;
         margin-left: 8%;
         margin-top: -5%;
     }
+
     #blurrypenguin {
         margin-top: 10%;
         width: 300%;
     }
+
     .paragraph2 {
         margin-top: 0%;
     }
+
     .paragraph2 p {
         width: 100%;
         text-align: center;
@@ -512,93 +536,184 @@ footer {
         margin-top: 5%;
         margin-left: 5%;
     }
+
     #sealimg {
         width: 80%;
         margin-left: 8%;
     }
+
     #orcaimg {
         width: 84%;
         margin-top: -5%;
         margin-left: 4%;
     }
+
     #blurryorca {
         width: 300%;
-        margin-top: -50%;
+        position: fixed;
     }
+
     .table {
-        margin-top: -140%;
+        position: relative;
+        margin-top: 15%;
     }
+
     .table h2 {
         font-size: 5vw;
     }
+
     .table ul {
         margin-top: 5%;
         font-size: 4vw;
         margin-left: 30%;
     }
+
     #vid {
         width: 100%;
         margin-top: 10%;
         margin-left: -7px;
     }
+
     #viewonsouthpole {
         width: 80%;
     }
+
     .paragraph3 {
         margin-top: 5%;
     }
+
     .paragraph3 h2 {
         font-size: 5vw;
     }
+
     .paragraph3 a {
         font-size: 4vw;
         margin-left: -1%;
     }
+
     #oben {
         margin-left: 28%;
     }
-    #southpole2blur {
-        width: 300%;
-        height: auto;
+
+    #eventbody {
+        background-color:rgb(164, 201, 204)
     }
+
+    #southpole2blur {
+        position: fixed;
+        margin-top: 110%;
+        width: 97%;
+        height: 100%;
+        z-index: -10;
+    }
+
+    #eventform {
+        position: absolute;
+        margin-top: 10%;
+        margin-left: 15%;
+    }
+
+    #eventform h2 {
+        width: 60%;
+        margin-left: 5%;
+        margin-top: 5%;
+        font-size: 4.5vw;
+    }
+
+    #eventformbody {
+        padding-top: 15px;
+    }
+
+    .inputfield label {
+        font-size: 3vw;
+    }
+
+    .inputfield input {
+        width: 50%;
+        font-size: 3vw;
+    }
+
+    #pricefield, #datefield {
+        padding-top: 20px;
+        width: 125%;
+    }
+
+    #datefield {
+        margin-left: 25%;
+    }
+
+    #formbutton {
+        margin-top: 3%;
+        margin-left: 60%;
+        font-size: 3vw;
+    }
+
     #contentevent {
         width: 100%;
-        margin-top: -120%;
+        position: relative;
+        margin-top: -75%;
     }
 
     #planned {
         font-size: 7vw;
         overflow-x: hidden;
+        margin-top: 140%;
     }
+
     #table2 {
+        position:relative;
         margin-left: -8px;
-        margin-top: 2%;
         text-align: center;
     }
-    #gif {
-        width: 100%;
-        margin-top: 10%;
-        margin-bottom: 10%;;
-        margin-left: 20%;
-        overflow-x: hidden;
-    }
-    #pgif {
-        width: 60%;
-        overflow-x: hidden;
-    }
+
     #table2 th {
         font-size: 5vw;
         letter-spacing: 0.05em;
         overflow-x: hidden;
     }
+
     #table2 td {
-        font-size: 4vw;
+        font-size: 3vw;
         letter-spacing: 0.05em;
         padding: 10px;
         overflow-x: hidden;
     }
+
     #table2 tr {
         padding: 20px;
         overflow-x: hidden;
+    }
+
+    #date {
+        width: 10%;
+    }
+
+    #interpret {
+        width: 30%;
+    }
+
+    #price {
+        width: 10%;
+    }
+
+    #remove {
+        width: 25%;
+    }
+
+    #gif {
+        width: 100%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 20%;
+        overflow-x: hidden;
+    }
+
+    #pgif {
+        width: 60%;
+        overflow-x: hidden;
+    }
+
+    .trash {
+        background-size: 100%;
     }
 }
