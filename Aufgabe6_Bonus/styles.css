@@ -1,0 +1,79 @@
+* {
+    overflow-x: hidden;
+}
+
+html {
+    background-image: linear-gradient(to bottom right, #e7f0fd, #accbee);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#clockcontainer {
+    background-image: linear-gradient(to bottom right, #accbee, #e7f0fd);
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    left: 50%;
+    margin-left: -125px;
+    margin-top: 100px;
+    box-shadow: #accbee 5px 5px 5px, #f0f6ff -1px -1px 2px;
+}
+
+
+#timedisplay {
+    text-align: center;
+    font-family: "Cairo";
+    font-weight: 300;
+    font-size: 50px;
+    margin-top: 80px;
+    text-shadow: #7d9ec9 0px -2px 5px;
+}
+
+#buttons {
+    position: relative;
+    left: 50%;
+    margin-left: -120px;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-bottom: 50px;
+}
+
+button {
+    background-image: linear-gradient(to bottom right, #e7f0fd, #accbee);
+    box-shadow: #accbee 5px 5px 3px, #f0f6ff -1px -1px 2px;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-width: 0;
+    border-radius: 50%;
+    text-align: center;
+    font-family: "Cairo";
+    font-weight: 200;
+    font-size: 20px;
+    transition-duration: .4s;
+}
+
+button:active {
+    background-image: linear-gradient(to bottom right, #accbee, #e7f0fd);
+}
+
+[data-state="on"] {
+    background-image: linear-gradient(to bottom right, #accbee, #e7f0fd);
+}
+
+button:hover {
+    filter:invert(3%);  
+}
+
+#tablecontainer {
+    font-family: "Cairo";
+    position: relative;
+    width: 100px;
+    height: 300px;
+    left: 50%;
+    margin-left: -31px;
+}
+
+
