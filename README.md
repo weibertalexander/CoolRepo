@@ -31,7 +31,7 @@
 
 ## Aufgabe 6) (Bonus)
   * Link zum Root Ordner der Aufgabe:
-    * https://github.com/weibertalexander/CoolRepo/tree/main/Aufgabe6_Bonus
+    * https://github.com/weibertalexander/CoolRepo/tree/main/Aufgabe6
   * Link zur Github Page:
     * https://weibertalexander.github.io/CoolRepo/Aufgabe6_Bonus/index.html
 
