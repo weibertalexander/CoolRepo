@@ -10,6 +10,11 @@ async function requestTextWithGET(url: RequestInfo): Promise<string> {
 async function sendJSONStringWithPOST(url: RequestInfo, jsonString: string): Promise<void> {
     await fetch(url, { method: "post", body: jsonString });
 }
+async function addDatabaseEvents() {
+    let entries: string = await requestTextWithGET("http://127.0.0.1:3000/concertEvents");
+    console.log(entries);
+}
+
 
 class EventPlanner {
     // Data
@@ -25,7 +30,7 @@ class EventPlanner {
         this.price = p;
         this.id = id;
         id++;
-        console.log(this.asString());
+        //console.log(this.asString());
     }
 
     // Getters
@@ -72,7 +77,8 @@ function addEvent(): void {
     events.push(entry);
     addTableEntry(entry);
 
-    sendJSONStringWithPOST("127.0.0.1:3000/concertEvents", JSON.stringify(entry));  // add to db
+    sendJSONStringWithPOST("http://127.0.0.1:3000/concertEvents", JSON.stringify(entry));  // add to db
+
 
     //Clear input fields. Commented out for easier testing.
     //interpretinput.value = "";
@@ -124,11 +130,4 @@ function addTableEntry(eventitem: EventPlanner): void {
     // Display on website
     document.getElementById("table2")!.appendChild(entry);  // ! supresses "possibly null" error
 }
-/*
-async function addDatabaseEvents() {
-    let entries: string = requestTextWithGET("127.0.0.1:3000/concertEvents");
 
-    
-
-}
-*/

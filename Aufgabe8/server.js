@@ -63,7 +63,7 @@ var mongoUrl = "mongodb://localhost:27017"; // für lokale MongoDB
 var mongoClient = new mongo.MongoClient(mongoUrl);
 var db = mongoClient.db("events");
 var concertCollection = db.collection("concert");
-function dbFind(db, collection, requestObject, response) {
+function dbFind(db, collection, response) {
     return __awaiter(this, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
@@ -71,10 +71,10 @@ function dbFind(db, collection, requestObject, response) {
                 case 0: return [4 /*yield*/, mongoClient.connect()];
                 case 1:
                     _a.sent();
-                    return [4 /*yield*/, mongoClient.db(db).collection(collection).find(requestObject).toArray()];
+                    return [4 /*yield*/, mongoClient.db(db).collection(collection).find().toArray()];
                 case 2:
                     result = _a.sent();
-                    console.log(result, requestObject); // bei Fehlern zum Testen
+                    console.log(result); // bei Fehlern zum Testen
                     response.setHeader("Content-Type", "application/json");
                     response.write(JSON.stringify(result));
                     return [2 /*return*/];
@@ -127,7 +127,7 @@ var server = http.createServer(function (request, response) { return __awaiter(v
                     case "POST": return [3 /*break*/, 4];
                 }
                 return [3 /*break*/, 6];
-            case 2: return [4 /*yield*/, dbFind("concerts", "event", {}, response)];
+            case 2: return [4 /*yield*/, dbFind("concerts", "event", response)];
             case 3:
                 _c.sent();
                 return [3 /*break*/, 6];

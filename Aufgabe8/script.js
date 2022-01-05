@@ -65,6 +65,20 @@ function sendJSONStringWithPOST(url, jsonString) {
         });
     });
 }
+function addDatabaseEvents() {
+    return __awaiter(this, void 0, void 0, function () {
+        var entries;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, requestTextWithGET("http://127.0.0.1:3000/concertEvents")];
+                case 1:
+                    entries = _a.sent();
+                    console.log(entries);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
 var EventPlanner = /** @class */ (function () {
     // Constructor also gives each element an ID 
     function EventPlanner(i, d, p) {
@@ -73,7 +87,7 @@ var EventPlanner = /** @class */ (function () {
         this.price = p;
         this.id = id;
         id++;
-        console.log(this.asString());
+        //console.log(this.asString());
     }
     // Getters
     EventPlanner.prototype.asString = function () {
@@ -112,7 +126,7 @@ function addEvent() {
     var entry = new EventPlanner(interpretinput.value, dateinput.value, priceinput.value);
     events.push(entry);
     addTableEntry(entry);
-    sendJSONStringWithPOST("127.0.0.1:3000/concertEvents", JSON.stringify(entry)); // add to db
+    sendJSONStringWithPOST("http://127.0.0.1:3000/concertEvents", JSON.stringify(entry)); // add to db
     //Clear input fields. Commented out for easier testing.
     //interpretinput.value = "";
     //dateinput.value = "";
@@ -157,11 +171,3 @@ function addTableEntry(eventitem) {
     // Display on website
     document.getElementById("table2").appendChild(entry); // ! supresses "possibly null" error
 }
-/*
-async function addDatabaseEvents() {
-    let entries: string = requestTextWithGET("127.0.0.1:3000/concertEvents");
-
-    
-
-}
-*/ 

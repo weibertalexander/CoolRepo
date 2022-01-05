@@ -9,10 +9,10 @@ let mongoClient: mongo.MongoClient = new mongo.MongoClient(mongoUrl);
 const db: mongo.Db = mongoClient.db("events");
 const concertCollection: mongo.Collection = db.collection("concert");
 
-async function dbFind(db: string,collection: string, requestObject: any, response: http.ServerResponse) {
+async function dbFind(db: string,collection: string, response: http.ServerResponse) {
     await mongoClient.connect();
-    let result = await mongoClient.db(db).collection(collection).find(requestObject).toArray();
-    console.log(result, requestObject); // bei Fehlern zum Testen
+    let result = await mongoClient.db(db).collection(collection).find().toArray();
+    console.log(result); // bei Fehlern zum Testen
     response.setHeader("Content-Type", "application/json");
     response.write(JSON.stringify(result));
 }
@@ -37,12 +37,7 @@ const server: http.Server = http.createServer(
             case "/concertEvents": {
                 switch (request.method) {
                     case "GET":
-                        await dbFind(
-                            "concerts",
-                            "event",
-                            {},
-                            response
-                        );
+                        await dbFind("concerts", "event", response);
                         break;
                     case "POST":
                         await dbAddOrEdit("events", "concert", request);
