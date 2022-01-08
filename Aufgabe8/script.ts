@@ -78,8 +78,6 @@ function addEvent(): void {
     addTableEntry(entry);
 
     sendJSONStringWithPOST("http://127.0.0.1:3000/concertEvents", JSON.stringify(entry));  // add to db
-
-
     //Clear input fields. Commented out for easier testing.
     //interpretinput.value = "";
     //dateinput.value = "";
@@ -128,6 +126,16 @@ function addTableEntry(eventitem: EventPlanner): void {
     entry.appendChild(trash);
 
     // Display on website
-    document.getElementById("table2")!.appendChild(entry);  // ! supresses "possibly null" error
+    document.getElementById("table2")!.appendChild(entry);  // supress "possibly null" error with !
 }
+
+async function addTableEntryFromDB() {
+    let dbcontents: string = await requestTextWithGET("http://127.0.0.1:3000/concertEvents");
+    for (let dbevent of JSON.parse(dbcontents)) {
+        let loadedevent: EventPlanner = new EventPlanner(dbevent.interpret, dbevent.date, dbevent.price);
+        addTableEntry(loadedevent);
+    }
+}
+
+addTableEntryFromDB();
 

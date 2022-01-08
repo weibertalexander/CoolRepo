@@ -169,5 +169,24 @@ function addTableEntry(eventitem) {
     entry.appendChild(price);
     entry.appendChild(trash);
     // Display on website
-    document.getElementById("table2").appendChild(entry); // ! supresses "possibly null" error
+    document.getElementById("table2").appendChild(entry); // supress "possibly null" error with !
 }
+function addTableEntryFromDB() {
+    return __awaiter(this, void 0, void 0, function () {
+        var dbcontents, _i, _a, dbevent, loadedevent;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, requestTextWithGET("http://127.0.0.1:3000/concertEvents")];
+                case 1:
+                    dbcontents = _b.sent();
+                    for (_i = 0, _a = JSON.parse(dbcontents); _i < _a.length; _i++) {
+                        dbevent = _a[_i];
+                        loadedevent = new EventPlanner(dbevent.interpret, dbevent.date, dbevent.price);
+                        addTableEntry(loadedevent);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+addTableEntryFromDB();

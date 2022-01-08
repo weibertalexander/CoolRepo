@@ -59,7 +59,7 @@ var http = __importStar(require("http"));
 var mongo = __importStar(require("mongodb"));
 var hostname = "127.0.0.1"; // localhost
 var port = 3000;
-var mongoUrl = "mongodb://localhost:27017"; // für lokale MongoDB
+var mongoUrl = "mongodb://127.0.0.1:27017"; // für lokale MongoDB
 var mongoClient = new mongo.MongoClient(mongoUrl);
 var db = mongoClient.db("events");
 var concertCollection = db.collection("concert");
@@ -96,7 +96,6 @@ function dbAddOrEdit(db, collection, request) {
                         case 0: return [4 /*yield*/, mongoClient.connect()];
                         case 1:
                             _a.sent();
-                            console.log(jsonString); // bei Fehlern zum Testen
                             event = JSON.parse(jsonString);
                             mongoClient.db(db).collection(collection).insertOne(event);
                             return [2 /*return*/];
@@ -131,7 +130,7 @@ var server = http.createServer(function (request, response) { return __awaiter(v
             case 3:
                 _c.sent();
                 return [3 /*break*/, 6];
-            case 4: return [4 /*yield*/, dbAddOrEdit("events", "concert", request)];
+            case 4: return [4 /*yield*/, dbAddOrEdit("concerts", "event", request)];
             case 5:
                 _c.sent();
                 return [3 /*break*/, 6];
