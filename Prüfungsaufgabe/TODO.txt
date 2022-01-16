@@ -1,0 +1,6 @@
+1) Aus den eingegeben Daten bei additem.html ein Objekt erstellen, welches dann mit POST an den Server geschickt wird
+2) Dieses muss in die Datenbank eingefügt werden, zusätzlich muss eine Funktion in overviewscript gebaut werden,
+    mit der man alle Elemente aus der Datenbank einließt und entsprechend als farbige Kreise darstellt
+3) Es sollen max. 5 Kreise angezeigt werden (1-3: Inhalt des Fachs, 4: 3-Punkte-Icon falls es noch mehr Elemente gibt, und das + icon)
+4) Bei Klick auf farbigen Kreis soll man mit href auf die Bearbeiten-Seite gelangen. Von der Struktur her so wie bei additem, aber mit vorausgefüllten Feldern.
+5) joa idk gucken wir mal wies so läuft

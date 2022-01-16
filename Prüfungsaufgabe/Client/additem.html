@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>AW Electronics: Your digital fridge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Digital Smart Fridge" />
+    <meta name="keywords" content="Smart fridge, tracker, digital" />
+    <meta name="author" content="Alexander Weibert" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400&family=Darker+Grotesque:wght@400;500;600;700;800&family=Khand:wght@300;400&family=Lexend:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="./scripts/additemscript.js" defer> </script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <a href="index.html"> <img src="assets/CompanyLogo.svg"> </a>
+        </div>
+
+        <div id="navigation">
+            <a id="mainpage"> Our Fridges </a>
+            <a href="overview.html" id="overviewhref"> Digital Fridge </a>
+        </div>
+    </header>
+
+    <div class="text" id="displaycompartment">
+    </div>
+
+    <div id="inputcontainer">
+        <div class="inputfield" id="colorinput">
+            <label for="colorpicker">Color</label>
+            <input type="color" id="colorpicker">
+        </div>
+
+        <div class="inputfield" id="nameinput">
+            <label for="i_name">Itemname</label>
+            <input type="text" id="i_name" placeholder="Itemname">
+        </div>
+        <div class="inputfield" id="expireinput">
+            <label for="i_expire">Expiration date</label>
+            <input type="date" id="i_expire">
+        </div>
+        <div class="inputfield" id="noteinput">
+            <label for="i_note">Note</label>
+            <input type="text" id="i_note" placeholder="Note">
+        </div>
+    </div>
+    <button id="additembutton">Add to fridge</button>
+</body>
+
+</html>
