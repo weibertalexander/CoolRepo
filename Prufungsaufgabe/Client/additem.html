@@ -13,18 +13,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400&family=Darker+Grotesque:wght@400;500;600;700;800&family=Khand:wght@300;400&family=Lexend:wght@200;300;400;500;600&display=swap"
         rel="stylesheet">
+    <script src="./scripts/fridge.js"> </script>
+    <script src="./scripts/serverrequests.js"> </script>
     <script src="./scripts/additemscript.js" defer> </script>
 </head>
 
 <body>
     <header>
         <div id="logo">
-            <a href="index.html"> <img src="assets/CompanyLogo.svg"> </a>
+            <a href="index.html"> <img src="assets/icons/company_logo.svg"> </a>
         </div>
 
         <div id="navigation">
-            <a id="mainpage"> Our Fridges </a>
-            <a href="overview.html" id="overviewhref"> Digital Fridge </a>
+            <a href="index.html" class="notactive"> Our Fridges </a>
+            <a href="overview.html" class="notactive"> Digital Fridge </a>
         </div>
     </header>
 
@@ -32,22 +34,96 @@
     </div>
 
     <div id="inputcontainer">
-        <div class="inputfield" id="colorinput">
-            <label for="colorpicker">Color</label>
-            <input type="color" id="colorpicker">
+        <div class="inputfield" id="categoryinput">
+            <label for="categorycontainer">Category</label>
+            <div class="categorycontainer" id="additemcategory">
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="fruit" checked="true">
+                        <img class="icon" id="fruit" src="./assets/icons/fruit_icon.svg">
+                    </input>
+                    <span class="tooltip">Fruits</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="veg">
+                        <img class="icon" id="veg" src="./assets/icons/veg_icon.svg">
+                    </input>
+                    <span class="tooltip">Vegetables</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="milk">
+                        <img class="icon" id="milk" src="./assets/icons/milk_icon.svg">
+                    </input>
+                    <span class="tooltip">Milk</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="egg">
+                        <img class="icon" id="egg" src="./assets/icons/egg_icon.svg">
+                    </input>
+                    <span class="tooltip">Eggs</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="cheese">
+                        <img class="icon" id="cheese" src="./assets/icons/cheese_icon.svg">
+                    </input>
+                    <span class="tooltip">Cheese</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="meat">
+                        <img class="icon" id="meat" src="./assets/icons/meat_icon.svg">
+                    </input>
+                    <span class="tooltip">Meat</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="poultry">
+                        <img class="icon" id="poultry" src="./assets/icons/poultry_icon.svg">
+                    </input>
+                    <span class="tooltip">Poultry</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="fish">
+                        <img class="icon" id="fish" src="./assets/icons/fish_icon.svg">
+                    </input>
+                    <span class="tooltip">Fish</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="drink">
+                        <img class="icon" id="drink" src="./assets/icons/drink_icon.svg">
+                    </input>
+                    <span class="tooltip">Drinks</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="pizza">
+                        <img class="icon" id="pizza" src="./assets/icons/pizza_icon.svg">
+                    </input>
+                    <span class="tooltip">Pizza</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="icecream">
+                        <img class="icon" id="icecream" src="./assets/icons/icecream_icon.svg">
+                    </input>
+                    <span class="tooltip">Frozen</span>
+                </label>
+                <label class="categorybutton">
+                    <input type="radio" name="category" value="cooked">
+                        <img class="icon" id="cooked" src="./assets/icons/cooked_icon.svg">
+                    </input>
+                    <span class="tooltip">Cooked</span>
+                </label>
+            </div>
         </div>
-
-        <div class="inputfield" id="nameinput">
-            <label for="i_name">Itemname</label>
-            <input type="text" id="i_name" placeholder="Itemname">
-        </div>
-        <div class="inputfield" id="expireinput">
-            <label for="i_expire">Expiration date</label>
-            <input type="date" id="i_expire">
-        </div>
-        <div class="inputfield" id="noteinput">
-            <label for="i_note">Note</label>
-            <input type="text" id="i_note" placeholder="Note">
+        <div id="input2">
+            <div class="inputfield" id="nameinput">
+                <label for="i_name">Itemname</label>
+                <input type="text" id="i_name" placeholder="Itemname">
+            </div>
+            <div class="inputfield" id="expireinput">
+                <label for="i_expire">Expiration date</label>
+                <input type="date" id="i_expire">
+            </div>
+            <div class="inputfield" id="noteinput">
+                <label for="i_note">Note</label>
+                <input type="text" id="i_note" placeholder="Note">
+            </div>
         </div>
     </div>
     <button id="additembutton">Add to fridge</button>

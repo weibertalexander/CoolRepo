@@ -25,13 +25,13 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    color: white;
-    background-color: #c9c9c9;
+    color: rgb(255, 226, 241);
+    background-color: #6d5935;
 }
 
 /*  TYPOGRAPHY ----------------------------------------------------------------------------------------------------------------------------------- */
 
-.text h1 {
+h1 {
     font-family: "Lexend";
     font-weight: 300;
 }
@@ -51,17 +51,22 @@ header {
     margin: 8px 0 0 0;
 
     width: 101%;
-    height: 72px;
+    height: 4.4em;
 
-    border-bottom: 5px solid white;
-    background-color: rgb(0, 179, 54);
+    border-bottom: 5px solid rgb(255, 226, 241);
+    box-shadow: 0 5px 15px rgba(34, 0, 0, 0.74);
+    background-color: rgb(29, 0, 6);
 }
 
 #logo {
-    width: 283px;
+    width: 15%;
     height: 55px;
     padding: 8px 8px 10px 30px;
-    filter: invert(100%);
+    filter: invert(80%);
+}
+
+#logo img {
+    width: 100%
 }
 
 #navigation {
@@ -71,7 +76,7 @@ header {
     font-family: "Cairo";
     font-weight: 400;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 226, 241);
 }
 
 #navigation a {
@@ -79,24 +84,25 @@ header {
     padding: 0 10px 0 10px;
 }
 
-#mainpage {
-    box-shadow: rgb(255, 255, 255) 0 -15px, rgb(255, 255, 255) 0 21px;
+.active {
+    box-shadow: rgb(255, 226, 241) 0 -15px, rgb(255, 226, 241) 0 21px;
     border-radius: 10px 10px 0 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 226, 241);
     color: rgb(29, 0, 6);
 }
 
-#overviewhref {
+.notactive {
     padding: 0 10px 0 10px;
     text-decoration: none;
+    color: rgb(255, 226, 241);
     transition: box-shadow 300ms ease-out, background-color 300ms ease-out, color 300ms ease-out, corder-radius 300ms ease-out;
 }
 
-#overviewhref:hover {
-    box-shadow: rgb(255, 255, 255) 0 -15px, rgb(255, 255, 255) 0 21px;
+.notactive:hover {
+    box-shadow: rgb(255, 226, 241) 0 -15px, rgb(255, 226, 241) 0 21px;
     border-radius: 10px 10px 0 0;
     color: rgb(29, 0, 6);
-    background-color: white;
+    background-color: rgb(255, 226, 241);
 
 }
 
@@ -112,7 +118,7 @@ header {
     justify-content: right;
     text-align: center;
 
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.301);
     box-shadow: 0 10px 10px rgb(160, 160, 160), 0 -10px 10px rgb(160, 160, 160);
 }
 
@@ -124,7 +130,7 @@ header {
 #textbox1 span {
     font-family: "Lexend";
     font-weight: 500;
-    color: rgb(0, 179, 54);
+    color: rgb(158, 9, 9);
 }
 
 #middletext1 {
@@ -140,7 +146,7 @@ header {
     font-family: "Lexend";
     font-weight: 500;
     font-size: 40px;
-    color: rgb(0, 179, 54);
+    color: rgb(158, 9, 9);
 }
 
 #imgcontainer1 {
@@ -152,7 +158,7 @@ header {
     margin-top: 5%;
     width: 100%;
     height: 1000px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.301);
 }
 
 #img1 {
@@ -172,7 +178,6 @@ header {
     text-align: left;
 }
 
-#textbox2 h1 {}
 
 #textbox2 p {
     width: 60%;
@@ -210,16 +215,23 @@ header {
 
 /* Overview page -------------------------------------------------------------------------------------------------------- */
 
+#overviewbody {
+    width: 100%;
+    height: 100%;
+    margin: 130px 0 0 0;
+    display: inline-flex;
+    flex-direction: row;
+}
+
 #imgcontainer_o1 {
     display: inline-flex;
     justify-content: center;
-    margin: 105px 0 0 0;
     width: 100%;
     height: 80vh;
 }
 
 #closedimg {
-    position: fixed;
+    position: relative;
     height: inherit;
     display: block;
 }
@@ -229,12 +241,12 @@ header {
     display: inline-flex;
     justify-content: left;
     height: inherit;
-
+    justify-self: left;
     display: none;
 }
 
 #openedimg {
-    position: fixed;
+    position: relative;
     height: inherit;
     display: none;
 }
@@ -286,10 +298,55 @@ header {
     align-items: center;
 }
 
-.compartmentitem {
-    width: 24px;
-    height: 27px;
+.compartment:hover {
+    background-color: rgba(87, 87, 87, 0.274);
+}
+
+
+.compartmentitem img {
+    width: 30px;
+    height: 30px;
     justify-self: center;
+    margin: 3px 2px 0 0;
+}
+
+.additembutton, .additembutton img{
+    width: 2.25em;
+    height: 2.25em;
+}
+
+.moreitembutton, .moreitembutton img {
+    width: 2.25em;
+    height: 2.25em;
+}
+
+#filtercontainer {
+    width: 15%;
+    background-color: rgba(0, 0, 0, 0.377);
+    display: flex;
+    flex-direction: column;
+    justify-self: right;
+}
+
+#filterh {
+    text-align: center;
+}
+
+.categorybutton input[type=button]:active {
+    filter: invert(100%);
+}
+
+#overviewcategory {
+    justify-content: center;
+}
+
+#overviewcategory .icon {
+    width: 40px;
+}
+
+#namefilter {
+    align-self: center;
+    width: 93%;
 }
 
 /* Additem.html ----------------------------------------------------------------------------------------------------------*/
@@ -304,31 +361,108 @@ header {
 }
 
 #inputcontainer {
-    margin: 80px 0 0 0;
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 .inputfield {
     display: inline-flex;
+    width: 25%;
     flex-direction: column;
     font-family: "Cairo";
     padding: 0 5px 0 5px;
 }
 
-.inputfield label {
-    background-color: rgb(136, 0, 0);
+#categoryinput {
+    width: 300px;
+    height: 250px;
+    padding: 6em 0 4em 0;
+    align-self: center;
+}
+
+
+.categorycontainer {
+    width: 100%;
+    height: 100%;
+
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(236, 236, 236, 0.322);
+    border-bottom: 1px black solid;
+}
+
+.categorybutton input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    align-content: center;
+}
+
+.categorybutton input+img {
+    cursor: pointer;
+}
+
+.categorybutton input:checked+img {
+    filter: invert(100%) drop-shadow(0px 0px 8px rgba(226, 226, 226, 0.753));
+}
+
+.icon {
+    align-self: center;
+    padding: 17px;
+    width: 40px;
+    height: 40px;
+    filter: invert(70%) drop-shadow(0 0 4px rgba(0, 0, 0, 0.521));
+}
+
+.tooltip {
+    visibility: hidden;
+    position: fixed;
+    width: 80px;
+    font-family: "Cairo";
+    text-align: center;
+    margin: 55px 0 0 -75px;
+    background-color: rgb(29, 0, 6);
+    border-radius: 10px;
+    z-index: 100;
+}
+
+label:hover .tooltip, .icon {
+    visibility: visible;
+}
+
+label:hover .icon {
+    filter: invert(40%) drop-shadow(0px 0px 8px rgba(226, 226, 226, 0.678));
+}
+
+
+.categorycontainer p:hover {
+    background-color: rgba(0, 0, 0, 0.123);
+}
+
+#input2 {
+    width: 100%;
+    display: inline-flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.inputfield label:not(.categorybutton) {
+    background-color: rgb(29, 0, 6);
     border-radius: 10px 10px 0 0;
     padding-left: 0.5em;
 }
 
-.inputfield input, .inputfield select {
-    width: 200px;
+.inputfield input {
+    width: auto;
     height: 2em;
-    font-family: "Cairo";
     padding: 0.5em 0 0 0.5em;
+
+    font-family: "Cairo";
     font-size: 1em;
     background-color: rgba(236, 236, 236, 0.322);
     color: rgb(0, 0, 0);
@@ -337,21 +471,15 @@ header {
     border-bottom: 1px solid black;
 }
 
-#colorpicker {
-    width: 100%;
-    height: 2.6em;
-    padding-right: 0.5em;
-}
-
-#colorinput {
-    width: 10%;
+.inputfield input:hover {
+    background-color: rgba(90, 90, 90, 0.295);
 }
 
 #expireinput input {
     height: 2em;
 }
 
-#additembutton {
+#additembutton{
     align-self: center;
     margin: 2%;
     width: 30%;
