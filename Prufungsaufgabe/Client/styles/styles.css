@@ -26,7 +26,7 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     color: rgb(255, 226, 241);
-    background-color: #6d5935;
+    background-color: #302e33;
 }
 
 /*  TYPOGRAPHY ----------------------------------------------------------------------------------------------------------------------------------- */
@@ -59,14 +59,14 @@ header {
 }
 
 #logo {
-    width: 15%;
-    height: 55px;
+    width: 150px;
+    height: 70px;
     padding: 8px 8px 10px 30px;
     filter: invert(80%);
 }
 
 #logo img {
-    width: 100%
+    width: 100%;
 }
 
 #navigation {
@@ -304,20 +304,21 @@ header {
 
 
 .compartmentitem img {
-    width: 30px;
-    height: 30px;
+    width: auto;
+    height: 2vw;
     justify-self: center;
     margin: 3px 2px 0 0;
 }
 
-.additembutton, .additembutton img{
-    width: 2.25em;
-    height: 2.25em;
+.additembutton, .additembutton img {
+    width: 2vw;
+    height: auto;
 }
 
 .moreitembutton, .moreitembutton img {
-    width: 2.25em;
-    height: 2.25em;
+    justify-self: flex-end;
+    width: 2vw;
+    height: auto;
 }
 
 #filtercontainer {
@@ -346,7 +347,49 @@ header {
 
 #namefilter {
     align-self: center;
-    width: 93%;
+    width: 94%;
+}
+
+#datefilter {
+    width: auto;
+}
+
+#expiredcontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    font-family: "Cairo";
+}
+
+#expiredswitch {
+    margin: 3.75% 0 0 3%;
+}
+
+.itemtooltip {
+    margin-top: -50px;
+    justify-self: center;
+    display: none;
+    position: fixed;
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Cairo";
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(29, 0, 6);
+    border-radius: 10px;
+    z-index: 100;
+
+}
+
+.compartmentitem:hover .itemtooltip, .compartmentitem:hover {
+    display: block;
+
+}
+
+.compartmentitem:hover {
+    transform: translateY(-4px);
 }
 
 /* Additem.html ----------------------------------------------------------------------------------------------------------*/
@@ -372,16 +415,16 @@ header {
     width: 25%;
     flex-direction: column;
     font-family: "Cairo";
-    padding: 0 5px 0 5px;
+    margin: 0 5px 0 5px;
+    box-shadow: 0 20px 1px rgba(163, 163, 163, 0.377);
 }
 
 #categoryinput {
     width: 300px;
-    height: 250px;
-    padding: 6em 0 4em 0;
+    height: 280px;
+    margin: 6em 0 4em 0;
     align-self: center;
 }
-
 
 .categorycontainer {
     width: 100%;
@@ -392,7 +435,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     background-color: rgba(236, 236, 236, 0.322);
-    border-bottom: 1px black solid;
+    border-bottom: 2px rgba(236, 236, 236, 0.24) solid;
 }
 
 .categorybutton input {
@@ -468,7 +511,7 @@ label:hover .icon {
     color: rgb(0, 0, 0);
     outline: none;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 2px rgba(236, 236, 236, 0.24) solid;
 }
 
 .inputfield input:hover {
@@ -479,8 +522,84 @@ label:hover .icon {
     height: 2em;
 }
 
-#additembutton{
+#buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     align-self: center;
-    margin: 2%;
-    width: 30%;
+    margin-top: 50px;
+}
+
+#additembutton, #deleteitembutton {
+    margin: 0 20px 0 20px;
+    align-self: center;
+    padding: 10px;
+    width: 25%;
+}
+
+#additembutton {
+    background-color: rgb(102, 196, 48);
+}
+
+#additembutton:hover {
+    background-color: rgb(83, 160, 12);
+}
+
+#deleteitembutton {
+    background-color: rgb(224, 91, 91);
+}
+
+#deleteitembutton:hover {
+    background-color: rgb(187, 59, 59);
+}
+
+/* Details.html -----------------------------------*/
+#infotable {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20%;
+    width: 100%;
+}
+
+#infotable table {
+    width: 300px;
+    margin: 20px;
+    border: 2px rgb(184, 184, 184) solid;
+    padding: 20px;
+    box-shadow: 0 0 10px rgb(211, 241, 255);
+}
+
+#infotable table tr {
+    font-family: "Darker Grotesque";
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 10px;
+    
+}
+
+#infotable table tr:nth-child(even) {
+    background-color: rgba(114, 114, 114, 0.247);
+}
+
+#infotable table tr:nth-child(odd) {
+    background-color: rgba(77, 77, 77, 0.329);
+}
+
+#infotable table tr td {
+    width: 50%;
+    text-align: center;
+}
+
+.buttonrow td {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttoncontainer {
+    width: 100%;
+    justify-content: center;
 }

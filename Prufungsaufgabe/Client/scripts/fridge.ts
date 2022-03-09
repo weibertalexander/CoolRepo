@@ -1,20 +1,20 @@
 class Fridgeitem {
     private _category: string;
     private _name: string;
-    private _expirationDate: Date;
-    private _creationDate: Date;
+    private _expirationDate: number;
+    private _creationDate: number;
     private _note: string;
     private _compartment: string;
-    private _id?: string;  // ID is given by mongoDB
+    private _id?: number;  // ID is given by mongoDB
 
-    constructor(category: string, name: string, expdate: Date, curedate: Date, note: string, comp: string, id?: string) {
+    constructor(category: string, name: string, expdate: number, curedate: number, note: string, comp: string, id?: number) {
         this._category = category;
         this._name = name;
         this._expirationDate = expdate;
         this._creationDate = curedate;
         this._note = note;
         this._compartment = comp;
-        this._id = id || "";
+        this._id = id;
     }
 
     // Getters
@@ -26,11 +26,11 @@ class Fridgeitem {
         return this._name;
     }
 
-    public expirationDate(): Date {
+    public expirationDate(): number {
         return this._expirationDate
     }
 
-    public creationDate(): Date {
+    public creationDate(): number {
         return this._creationDate;
     }
 
@@ -42,8 +42,8 @@ class Fridgeitem {
         return this._compartment;
     }
 
-    public id(): string {
-        return this._id || "";
+    public id(): number {
+        return this._id!;
     }
 
     // Generate JSON string of this object.

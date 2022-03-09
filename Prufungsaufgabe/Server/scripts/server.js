@@ -35,16 +35,30 @@ const hostname = "127.0.0.1";
 const port = 3000;
 const mongoUrl = "mongodb://127.0.0.1:27017"; // für lokale MongoDB
 let mongoClient = new mongo.MongoClient(mongoUrl);
-function dbFind(db, collection, requestObject, response) {
+const db = "fridgeitems";
+const collection = "items";
+let filtersettings = "";
+function dbFind(requestObject, response) {
     return __awaiter(this, void 0, void 0, function* () {
         yield mongoClient.connect();
+        console.log(`\tFinding item(s)`);
         let result = yield mongoClient.db(db).collection(collection).find(requestObject).toArray();
-        //console.log(result, requestObject); // bei Fehlern zum Testen
+        console.log(result, requestObject); // bei Fehlern zum Testen
         response.setHeader("Content-Type", "application/json");
         response.write(JSON.stringify(result));
     });
 }
-function dbAddOrEdit(db, collection, request) {
+function dbFindComp(requestObject, response) {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield mongoClient.connect();
+        console.log(`\tFinding item(s)`);
+        let result = (yield mongoClient.db(db).collection(collection).find(requestObject).toArray());
+        console.log(result, requestObject); // bei Fehlern zum Testen
+        response.setHeader("Content-Type", "application/json");
+        response.write(JSON.stringify(result));
+    });
+}
+function dbAddOrEdit(request) {
     return __awaiter(this, void 0, void 0, function* () {
         // Get JSON from request
         let jsonString = "";
@@ -54,65 +68,41 @@ function dbAddOrEdit(db, collection, request) {
             yield mongoClient.connect();
             // Parse JSON and choose collection based on category.
             let item = JSON.parse(jsonString);
-            //console.log(item);
-            // Replace item in database as it has an id.
-            if (item._id && item._id != "") {
-                // Item category has changed. Delete old entry and create new one.
-                if (collection != item._category) {
-                    console.log(typeof item._id);
-                    dbDelete(item._id, collection);
-                    item._id = new mongo.ObjectId();
-                    mongoClient.db(db).collection(item._category).insertOne(item);
-                    // Item category has not changed, replace old entry with new one.
-                }
-                else {
-                    mongoClient.db(db).collection(collection).replaceOne({
-                        _id: item._id,
-                    }, item);
-                }
-                // New item, add straight to database.
+            // Put item into database.
+            if (item._id == null) {
+                console.log("\tAdding new item to database");
+                mongoClient.db(db).collection(collection).insertOne(item);
+                let array = yield mongoClient.db(db).collection(collection).find().toArray();
+                let size = array.length;
+                console.log(`\t\tLength of collection: ${size}`);
+                // Replace item with the same id.
             }
             else {
-                item._id = new mongo.ObjectId();
-                mongoClient.db(db).collection(collection).insertOne(item);
+                console.log("\tReplacing item");
+                item._id = new mongo.ObjectId(item._id);
+                mongoClient.db(db).collection(collection).replaceOne({
+                    _id: item._id
+                }, item);
             }
         }));
     });
 }
-function dbDelete(id, collection) {
+function dbDelete(id) {
     return __awaiter(this, void 0, void 0, function* () {
         yield mongoClient.connect();
-        mongoClient.db("fridgeitem").collection(collection).deleteOne({ _id: new mongo.ObjectId(id) });
-        console.log(`deleted old item from ${collection}, as it has changed location`);
-    });
-}
-function dbGetAll(db, response) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let result = "[";
-        yield mongoClient.connect();
-        // Get all collections (aka categories) and iterate to get all elements.
-        let collections = yield mongoClient.db(db).listCollections().toArray();
-        for (let i = 0; i < collections.length; i++) {
-            let obj = yield mongoClient.db(db).collection(collections[i].name).find().toArray();
-            for (let j = 0; j < obj.length; j++) {
-                result += JSON.stringify(obj[j]);
-                if (i < collections.length - 1 || j < obj.length - 1) {
-                    result += ", ";
-                }
-            }
-            // Send database contents to server.
-            response.setHeader("Content-Type", "application/json");
-        }
-        result += "]";
-        response.write(result);
+        mongoClient.db(db).collection(collection).deleteOne({ _id: new mongo.ObjectId(id) });
+        console.log(`\tDeleting item`);
+        let size = yield (yield mongoClient.db(db).collection(collection).find().toArray()).length;
+        console.log(`\tLength of collection: ${size}`);
     });
 }
 function dbDropDatabase() {
     return __awaiter(this, void 0, void 0, function* () {
         yield mongoClient.connect();
-        mongoClient.db("fridgeitem").dropDatabase();
+        mongoClient.db(db).dropDatabase();
     });
 }
+//dbDropDatabase();
 const server = http.createServer((request, response) => __awaiter(void 0, void 0, void 0, function* () {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/plain");
@@ -123,29 +113,98 @@ const server = http.createServer((request, response) => __awaiter(void 0, void 0
         case "/item": {
             switch (request.method) {
                 case "GET":
-                    let category = url.searchParams.get("category");
-                    console.log(category);
-                    // Get specific item based on id.
-                    yield dbFind("fridgeitem", category, {
-                        _id: new mongo.ObjectId(url.searchParams.get("id")), // von String zu Zahl konvertieren
-                    }, response);
+                    console.log("logging: /item GET");
+                    yield dbFind({ _id: new mongo.ObjectId(url.searchParams.get("id")) }, response);
                     break;
                 case "POST":
-                    console.log(`post item with category: ${url.searchParams.get("collection")}`);
-                    dbAddOrEdit("fridgeitem", url.searchParams.get("collection"), request);
+                    console.log("logging: /item POST");
+                    dbAddOrEdit(request);
                     break;
             }
             break;
         }
-        case "/allitems": {
-            yield dbGetAll("fridgeitem", response);
+        case "/compartment": {
+            console.log("logging: /compartment GET");
+            switch (request.method) {
+                case "GET":
+                    console.log(url.searchParams.get("number"));
+                    yield dbFindComp({ _compartment: url.searchParams.get("number") }, response);
+                    break;
+            }
             break;
+        }
+        case "/filters": {
+            switch (request.method) {
+                case "POST":
+                    console.log("logging: /filters POST");
+                    setFilters(request);
+                    break;
+            }
+            break;
+        }
+        case "/delete": {
+            switch (request.method) {
+                case "GET":
+                    console.log("logging: /delete GET");
+                    yield dbDelete(url.searchParams.get("id"));
+                    break;
+            }
+        }
+        case "/allitems": {
+            switch (request.method) {
+                case "GET":
+                    console.log("logging: /allitems GET");
+                    yield dbFindFilters(response);
+            }
         }
         default:
             response.statusCode = 404;
     }
     response.end();
 }));
+function setFilters(request) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let jsonString = "";
+        console.log("\tSetting filters");
+        request.on("data", data => { jsonString += data; });
+        request.on("end", () => __awaiter(this, void 0, void 0, function* () {
+            filtersettings = jsonString;
+        }));
+    });
+}
+function dbFindFilters(response) {
+    return __awaiter(this, void 0, void 0, function* () {
+        console.log("\tLooking for items");
+        yield mongoClient.connect();
+        // Parse filtersettings.
+        let filter = JSON.parse(filtersettings);
+        let name = filter.name;
+        let categories = filter.categories;
+        let expdate = filter.expirationDate;
+        if (name) {
+            console.log("\t\tSearching with name");
+            let result = yield mongoClient.db(db).collection(collection).find({
+                $and: [
+                    { _name: new RegExp('^' + name) },
+                    { _category: { $in: categories } },
+                    { _expirationDate: { $lt: expdate } },
+                ]
+            }).toArray();
+            console.log(result);
+            response.write(JSON.stringify(result));
+        }
+        else {
+            console.log("\t\tSearching without name");
+            let result = yield mongoClient.db(db).collection(collection).find({
+                $and: [
+                    { _category: { $in: categories } },
+                    { _expirationDate: { $lt: expdate } },
+                ]
+            }).toArray();
+            response.write(JSON.stringify(result));
+        }
+    });
+}
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`~ ~ ~ Server running at http://${hostname}:${port}/ ~ ~ ~`);
 });

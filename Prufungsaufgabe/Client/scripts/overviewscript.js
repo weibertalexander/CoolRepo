@@ -12,7 +12,12 @@ let closedfridgeimg = document.getElementById("closedimg");
 let openedfridgeimg = document.getElementById("openedimg");
 let openedfridgediv = document.getElementById("openedfridgecontainer");
 let compartments = document.getElementsByClassName("compartment");
+let outerleftsection = document.getElementById("outerleftsection");
+let outerrightsection = document.getElementById("outerrightsection");
+let innerrightsection = document.getElementById("innerrightsection");
+let innerleftsection = document.getElementById("innerleftsection");
 const maxitemdisplay = 3;
+let currentFilters;
 // Display only set amount of items to avoid overflow. Toggle the "more items button" if not all items are shown.
 function displayItems() {
     compartments = document.getElementsByClassName("compartment");
@@ -20,11 +25,10 @@ function displayItems() {
         // Get every HTML element with class compartmentitem that is being 
         let visibleitems = Array.from(comp.querySelectorAll(`.compartmentitem`));
         let itemamount = visibleitems.length;
-        console.log(itemamount);
-        let morebutton = comp.querySelector(`[data-id]`);
+        let morebutton = comp.querySelector(".moreitembutton");
         let active = 0;
         for (let item of visibleitems) {
-            if (active < maxitemdisplay && toggleIconView(item)) {
+            if (active < maxitemdisplay) {
                 item.style.display = "block";
                 active++;
             }
@@ -47,87 +51,91 @@ function openfridge() {
     closedfridgeimg.style.display = "none";
     openedfridgeimg.style.display = "inline-flex";
     openedfridgediv.style.display = "inline-flex";
+    loadFromDatabase();
     setInterval(dynamicResize, 50);
     appendButtons();
     displayItems();
 }
 // Add filters.
 let filterbuttons = document.getElementsByClassName("filter");
-let filters = new Map();
-// Initialize category filters and add event listeners to buttons.
-for (let b of filterbuttons) {
-    filters.set(b.value, b.checked);
-    b.addEventListener("click", updateCategoryFilters);
+let categoryFilters = new Map();
+function initCurrentFilters() {
+    currentFilters = {
+        name: "",
+        categories: [],
+        expirationDate: new Date("2520-12-20").getTime(),
+    };
+    // Initialize category filters and add event listeners to buttons.
+    for (let b of filterbuttons) {
+        categoryFilters.set(b.value, b.checked);
+        currentFilters.categories.push(b.value);
+        b.addEventListener("click", updateCategoryFilters);
+    }
 }
+initCurrentFilters();
 // Turn on/off category filter if button is pressed.
 function updateCategoryFilters(event) {
     let filterbutton = event.currentTarget;
     let category = filterbutton.value;
     let checked = filterbutton.checked;
-    console.log(`${category} is ${checked}`);
-    filters.set(category, checked);
+    categoryFilters.set(category, checked);
+    let updatedCategories = [];
+    currentFilters.categories = [];
+    for (let b of filterbuttons) {
+        categoryFilters.set(b.value, b.checked);
+        if (b.checked) {
+            currentFilters.categories.push(b.value);
+        }
+    }
+    loadFromDatabase();
     displayItems();
 }
-function nameFilterSubstring(name) {
+let namefilterinput = document.getElementById("namefilter");
+namefilterinput.addEventListener("input", nameFilterOn);
+function nameFilterOn() {
     let namefilterinput = document.getElementById("namefilter");
-    let substring = name.substring(0, namefilterinput.value.length);
-    if (substring.toLowerCase() == namefilterinput.value.toLowerCase()) {
-        return true;
+    currentFilters.name = namefilterinput.value;
+    loadFromDatabase();
+}
+let datefilter = document.getElementById("datefilter");
+datefilter.addEventListener("change", toggleDateFilter);
+function toggleDateFilter(event) {
+    let field = event.currentTarget;
+    let isEmpty = true;
+    if (field.value.length != 0) {
+        isEmpty = false;
+    }
+    let value = parseInt(field.value);
+    let expiredate = new Date();
+    console.log(value);
+    console.log(field.value.length);
+    if (isEmpty) {
+        console.log("value is trash");
+        currentFilters.expirationDate = new Date("2520-12-20").getTime();
     }
     else {
-        return false;
+        expiredate.setDate((expiredate.getDate() + value));
+        currentFilters.expirationDate = expiredate.getTime();
     }
+    console.log(currentFilters.expirationDate);
+    loadFromDatabase();
 }
-/*
-    function nameFilterOn(): boolean {
-        let namefilterinput: HTMLInputElement = document.getElementById("namefilter") as HTMLInputElement;
-        if (namefilterinput.value != "" || null) {
-            console.log(`namefilter is active with ${namefilterinput.value}`);
-            return true;
-        }
-        return false;
-    }
-*/
-let nameFilterOn = false;
-let namefilterinput = document.getElementById("namefilter");
-namefilterinput.addEventListener("input", toggleNameFilter);
 function toggleNameFilter(event) {
-    console.log("inputfield is being edited");
     let inputfield = event.target;
     if (inputfield.value != "" || null) {
-        nameFilterOn = true;
+        currentFilters.name = "";
     }
     else {
-        nameFilterOn = false;
+        currentFilters.name = inputfield.value;
     }
+    loadFromDatabase();
     displayItems();
-}
-// Show / hide items based on filter settings.
-function toggleIconView(item) {
-    let itemname = item.getAttribute("data-name") || "";
-    let itemcategory = item.getAttribute("data-category");
-    if (nameFilterOn) {
-        if (nameFilterSubstring(itemname) && filters.get(itemcategory)) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    else {
-        if (filters.get(itemcategory)) {
-            return true;
-        }
-        else {
-            console.log(`${itemcategory} is being filtered off.`);
-            return false;
-        }
-    }
 }
 // Dynamically resize openedfridgediv to make it fit the fridge image size.
 function dynamicResize() {
     openedfridgediv.style.width = openedfridgeimg.width.toString() + "px";
     openedfridgediv.style.height = openedfridgeimg.height.toString() + "px";
+    //outerleftsection.style.width = openedfridgeimg.width * 0.118 + "px";
 }
 // Append add-buttons to each compartment to not spend 100 hours manually copying them into the html file.
 function appendButtons() {
@@ -140,8 +148,8 @@ function appendButtons() {
         let morebuttonimage = document.createElement("img");
         addbuttonimage.src = "../Client/assets/icons/add_icon.svg";
         morebuttonimage.src = "../Client/assets/icons/more_icon.svg";
-        addbutton.setAttribute("id", i.toString());
-        morebutton.setAttribute("data-id", i.toString());
+        addbutton.setAttribute("id", i.toString() + "a");
+        morebutton.setAttribute("id", i.toString() + "m");
         morebutton.setAttribute("style", "display: none");
         addbutton.appendChild(addbuttonimage);
         morebutton.appendChild(morebuttonimage);
@@ -151,11 +159,22 @@ function appendButtons() {
         compartments[i].appendChild(addbutton);
     }
 }
+function clearFridge() {
+    let htmlitems = document.getElementsByClassName("compartmentitem");
+    fridgeitemarray.clear;
+    while (htmlitems.length) {
+        htmlitems[0].remove();
+    }
+}
 // Load all items from database and create Fridgeitem objects.
 function loadFromDatabase() {
     return __awaiter(this, void 0, void 0, function* () {
-        let dbtext = yield requestTextWithGET("http://127.0.0.1:3000/allitems");
-        let fridgeitems = JSON.parse(dbtext);
+        let filters = JSON.stringify(currentFilters);
+        yield sendFilterSettings("http://127.0.0.1:3000/filters", filters);
+        let dbvalues = yield requestFromDatabase("http://127.0.0.1:3000/allitems");
+        let fridgeitems = JSON.parse(dbvalues);
+        console.log(fridgeitems);
+        clearFridge();
         // Add Fridgeitems from database to array.
         for (let item of fridgeitems) {
             let fridgeitem = new Fridgeitem(item._category, item._name, item._expirationDate, item._creationDate, item._note, item._compartment, item._id);
@@ -171,25 +190,29 @@ function loadFromDatabase() {
         //console.log(fridgeitemarray);
     });
 }
-loadFromDatabase();
 // Display Fridgeitem in HTML.
 function displayItem(fridgeitem) {
     // Get addbutton in compartment to add in front of it.
-    let addbutton = document.getElementById(fridgeitem.compartment());
+    let morebutton = document.getElementById(fridgeitem.compartment() + "m");
     // Create HTML elements.
     let itemdisplay = document.createElement("div");
     let hyperlink = document.createElement("a");
     let img = document.createElement("img");
+    let tooltip = document.createElement("span");
     // Set attributes.
     itemdisplay.setAttribute("class", "compartmentitem");
     itemdisplay.setAttribute("data-category", fridgeitem.category());
     itemdisplay.setAttribute("data-name", fridgeitem.name());
-    hyperlink.href = `additem.html?itemid=${fridgeitem.id()}&category=${fridgeitem.category()}&compartment=${fridgeitem.compartment()}`;
+    tooltip.textContent = `${fridgeitem.name()}, Expires: ${new Date(fridgeitem.expirationDate()).toLocaleDateString()}`;
+    tooltip.setAttribute("class", "itemtooltip");
+    //itemdisplay.setAttribute("data-expdate", fridgeitem.expirationDate().getDate().toString())
+    hyperlink.href = `details.html?itemid=${fridgeitem.id()}`;
     img.setAttribute("src", "./assets/icons/" + fridgeitem.category() + "_icon.svg");
     hyperlink.appendChild(img);
+    itemdisplay.appendChild(tooltip);
     itemdisplay.appendChild(hyperlink);
     // Get compartment number and insert in front of add button and style background.
     if (fridgeitem.compartment() >= "0") {
-        compartments[parseInt(fridgeitem.compartment())].insertBefore(itemdisplay, addbutton);
+        compartments[parseInt(fridgeitem.compartment())].insertBefore(itemdisplay, morebutton);
     }
 }

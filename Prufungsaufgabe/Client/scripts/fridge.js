@@ -7,7 +7,7 @@ class Fridgeitem {
         this._creationDate = curedate;
         this._note = note;
         this._compartment = comp;
-        this._id = id || "";
+        this._id = id;
     }
     // Getters
     category() {
@@ -29,7 +29,7 @@ class Fridgeitem {
         return this._compartment;
     }
     id() {
-        return this._id || "";
+        return this._id;
     }
     // Generate JSON string of this object.
     asJSONstring() {

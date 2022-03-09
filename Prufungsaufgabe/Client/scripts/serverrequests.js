@@ -9,7 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // Request from server.
-function requestTextWithGET(url) {
+function sendFilterSettings(url, filters) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let response = yield fetch(url, { method: "post", body: filters });
+    });
+}
+function requestFromDatabase(url) {
     return __awaiter(this, void 0, void 0, function* () {
         let response = yield fetch(url);
         let text = yield response.text();
