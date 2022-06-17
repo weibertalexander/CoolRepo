@@ -51,4 +51,4 @@
  * Link zum Root Ordner der Aufgabe:
     * https://github.com/weibertalexander/CoolRepo/tree/main/Prufungsaufgabe
  * Link zur Github Page:
-    * https://weibertalexander.github.io/CoolRepo/Prufungsaufgabe/Client/index.html
+    * https://weibertalexander.github.io/CoolRepo/Prufungsaufgabe/Client/overview.html
